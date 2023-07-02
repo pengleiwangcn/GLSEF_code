@@ -6,9 +6,9 @@ load('MSRC-v6.mat')
 v = length(X);
 for j=1: v
     colnum=size(X{j},2);
-    mole = repmat(std(X{j},0,2),1,colnum);
+    mole = std(X{j},0,2);
     mole(mole==0) = 1;
-    X{j}=(X{j}-repmat(mean(X{j},2),1,colnum))./mole;
+    X{j}=(X{j}-mean(X{j},2))./mole;
 end
 
 k = 5;
