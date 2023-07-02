@@ -1,8 +1,8 @@
 clc
 clear
-
-load('MSRC-v6.mat')
-% load('3sources.mat')
+addpath(genpath('./'))
+% load('MSRC-v6.mat')
+load('3sources.mat')
 v = length(X);
 for j=1: v
     colnum=size(X{j},2);
