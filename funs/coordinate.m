@@ -1,7 +1,7 @@
 function Y = coordinate(Y, lambda, B, N)
 BtY = B' * Y;
 YN = sum(Y .* N);
-y = sum(Y); % number of each cluster
+y = sum(Y);
 yBBy = sum(BtY .^ 2, 1);
 bb = sum(B .^ 2, 2);
 [~, S] = max(Y, [], 2);
@@ -36,11 +36,7 @@ while any(S_last ~= S)
             YN(s) = YN(s) - N(i, s);
             YN(idx) = YN(idx) + N(i, idx);
         end
-%         obj(i) = sum(yBBy ./ y) + lambda * trace((Y'*Y)^-.5 * Y' * N);
     end
-% plot(obj)
-% clear obj
-% close all
 end
 
 end
